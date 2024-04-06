@@ -19,11 +19,11 @@ const createTicket = async (ticketData, token) => {
 const getTickets = async (ticketId, token) => {
     const config = {
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
         }
     }
 
-    const response = await axios.post(API_URL + ticketId, config)
+    const response = await axios.get(API_URL, ticketId, config)
 
     return response.data
 }
