@@ -22,7 +22,7 @@ const getTicket = asyncHandler(async (req, res) => {
 
     // If not the User found by the ID in the token
     if (!ticket) {
-        res.status(40)
+        res.status(404)
         throw new Error('Ticket not found')
     }
 
@@ -53,7 +53,7 @@ const createTicket = asyncHandler(async (req, res) => {
         product,
         description,
         user: req.user.id,
-        status: 'new'
+        status: 'new',
     })
 
     res.status(201).json(ticket)
@@ -109,7 +109,8 @@ const updateTicket = asyncHandler(async (req, res) => {
     // Option object to set NEW to true
     const updatedTicket = await Ticket.findByIdAndUpdate(
         req.params.id,
-        req.body, { new: true })
+        req.body,
+        { new: true })
 
     // Response
     res.status(200).json(updatedTicket)
