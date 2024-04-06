@@ -16,6 +16,11 @@ const protect = asyncHandler(async (req, res, next) => {
             // Exclude the password that is found in the data of the token (.select)
             req.user = await User.findById(decoded.id).select('-password')
 
+            if (!req.user) {
+                res.status(401)
+                throw new Error('Not Authorized')
+            }
+
             next()
         } catch (error) {
             console.log(error)

@@ -1,10 +1,10 @@
 const path = require('path')
 const express = require('express');
-require('colors')
-require('dotenv').config()
+const colors = require('colors')
+const dotenv = require('dotenv').config()
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 5000
 
 
 // Connect to database
@@ -22,7 +22,7 @@ app.use('/api/tickets', require('./routes/ticketRoutes'))
 
 // Serve Frontend
 if (process.env.NODE_ENV === 'prodcution') {
-    // Set build forlder as static
+    // Set build folder as static
     app.use(express.static(path.join(__dirname, '../frontend/build')))
 
     app.get('*', (_, res) => {

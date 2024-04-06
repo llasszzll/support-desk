@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTickets } from "../features/tickets/ticketSlice";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
-import TicketItem from "../components/";
+import TicketItem from "../components/TicketItem";
 
 function Tickets() {
   const { tickets } = useSelector((state) => state.tickets);

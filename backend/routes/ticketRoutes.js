@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const {
     getTickets,
     getTicket,
@@ -12,8 +11,10 @@ const {
 const { protect } = require('../middleware/authMiddleware')
 
 
-const noteRouter = require('./noteRoutes')
-router.use('./:ticketsId/notes', noteRouter)
+
+// Re-route into note router
+const noteRouter = require('./notesRoutes')
+router.use('/:ticketsId/notes', noteRouter)
 
 // API routes
 // Routes + CRUD is protected to user Only updates

@@ -58,7 +58,7 @@ function Ticket() {
 
   // Create note submit
   const onNoteSubmit = (e) => {
-    // NOTE: we can unwrap our AsyncThunkACtion here so no need for isError and
+    // NOTE: we can unwrap our AsyncThunkAction here so no need for isError and
     // isSuccess state
     e.preventDefault();
     dispatch(createNote({ noteText, ticketId }))
