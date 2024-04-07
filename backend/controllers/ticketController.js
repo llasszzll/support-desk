@@ -18,7 +18,7 @@ const getTickets = asyncHandler(async (req, res) => {
 // @access      Private
 const getTicket = asyncHandler(async (req, res) => {
     // Get User using the if in the JWT
-    const ticket = await ticket.findById(req.params.id)
+    const ticket = await Ticket.findById(req.params.id)
 
     // If not the User found by the ID in the token
     if (!ticket) {
@@ -110,7 +110,8 @@ const updateTicket = asyncHandler(async (req, res) => {
     const updatedTicket = await Ticket.findByIdAndUpdate(
         req.params.id,
         req.body,
-        { new: true })
+        { new: true }
+    )
 
     // Response
     res.status(200).json(updatedTicket)

@@ -12,6 +12,7 @@
   "author": "llasszzll",
   "license": "MIT",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "concurrently": "^8.2.2",

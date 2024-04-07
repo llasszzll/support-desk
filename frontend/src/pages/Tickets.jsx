@@ -25,7 +25,7 @@ function Tickets() {
       <BackButton />
       <h1>Tickets</h1>
       <div className="tickets">
-        <div className="ticketHeadings">
+        <div className="ticket-headings">
           <div>Date</div>
           <div>Product</div>
           <div>Status</div>
