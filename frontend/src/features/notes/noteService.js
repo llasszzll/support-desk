@@ -10,7 +10,8 @@ const getNotes = async (ticketId, token) => {
         },
     }
 
-    const response = await axios.get(API_URL + ticketId + '/notes', config)
+    const response = await axios.get(API_URL + ticketId + '/notes',
+        config)
 
     return response.data
 }
